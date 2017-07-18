@@ -8,7 +8,7 @@ class ImageGrid extends Component{
   getImages(){
     return this.props.picsData.map((pic)=>{
       return(
-        <div className='img' key={pic.id}><img src={"http://farm"+ pic.farm +".static.flickr.com/"+ pic.server +"/"+ pic.id +"_"+ pic.secret +"_m.jpg"} /></div>
+        <div className='Grid-cell u-size1of3' key={pic.id}><img onClick={()=>console.log(pic.id)} src={"http://farm"+ pic.farm +".static.flickr.com/"+ pic.server +"/"+ pic.id +"_"+ pic.secret +"_m.jpg"} /></div>
       );
     });
   }
@@ -21,7 +21,7 @@ class ImageGrid extends Component{
 
     else{
       return(
-        <div className='img-grid'>
+        <div className='Grid Grid--fit Grid--withGutter'>
         {this.getImages()}
         </div>
       )

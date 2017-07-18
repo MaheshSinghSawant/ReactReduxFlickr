@@ -28,7 +28,7 @@ class SearchBar extends Component{
       <input
       value={this.state.term}
       onChange={this.handleChange.bind(this)}/>
-      <button>Submit</button>
+      <button className='Button --Button-default'>Submit</button>
       </form>
 
     )
