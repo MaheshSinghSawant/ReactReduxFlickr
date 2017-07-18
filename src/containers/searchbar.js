@@ -13,7 +13,8 @@ class SearchBar extends Component{
   }
 
   handleChange(event){
-    this.setState({term: event.target.value})
+    this.setState({term: event.target.value});
+    this.props.getImages(this.state.term);
   }
 
   handleSubmit(event){

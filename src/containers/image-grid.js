@@ -3,8 +3,6 @@ import {connect} from 'react-redux';
 
 class ImageGrid extends Component{
 
-
-
   getImages(){
     return this.props.picsData.map((pic)=>{
       return(
