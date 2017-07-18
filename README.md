@@ -1,5 +1,5 @@
 # ReactReduxFlickr
 
-npm install
-npm start
-localhost:8080
+# npm install
+# npm start
+# localhost:8080
