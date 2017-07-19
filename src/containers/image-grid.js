@@ -1,14 +1,36 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
+import LightBox from 'react-images';
+
 
 class ImageGrid extends Component{
+
+  constructor(props){
+    super(props);
+    this.state = {
+      isLightBoxOpen: false,
+      images: []
+    }
+  }
 
   getImages(){
     return this.props.picsData.map((pic)=>{
       return(
-        <div className='Grid-cell u-size1of3' key={pic.id}><img onClick={()=>console.log(pic.id)} src={"http://farm"+ pic.farm +".static.flickr.com/"+ pic.server +"/"+ pic.id +"_"+ pic.secret +"_m.jpg"} /></div>
+        <div className='Grid-cell u-size1of3' key={pic.id}><img
+        onClick={()=>this.handleImageClick("http://farm"+ pic.farm +".static.flickr.com/"+ pic.server +"/"+ pic.id +"_"+ pic.secret +"_m.jpg")}
+        src={"http://farm"+ pic.farm +".static.flickr.com/"+ pic.server +"/"+ pic.id +"_"+ pic.secret +"_m.jpg"} /></div>
       );
     });
+  }
+
+  handleImageClick(url){
+
+    const largeurlmod = url.substring(0, url.length-6);
+    const finalurl = largeurlmod + '.jpg';
+    console.log(finalurl);
+    this.setState({images: [{src: finalurl}]});
+    this.setState({isLightBoxOpen: !this.state.isLightBoxOpen});
   }
 
   render(){
@@ -21,6 +43,11 @@ class ImageGrid extends Component{
       return(
         <div className='Grid Grid--fit Grid--withGutter'>
         {this.getImages()}
+        <LightBox images={this.state.images}
+        isOpen = {this.state.isLightBoxOpen}
+        backdropClosesModal = {true}
+        onClose = {() => {this.setState({isLightBoxOpen:!this.state.isLightBoxOpen})}}
+        />
         </div>
       )
     }
@@ -30,4 +57,7 @@ class ImageGrid extends Component{
 function mapStateToProps(state){
   return ({picsData:state.picsData});
 }
+
+
+
 export default connect(mapStateToProps)(ImageGrid);

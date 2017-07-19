@@ -25,13 +25,15 @@ class SearchBar extends Component{
 
   render(){
     return(
+      <div>
       <form onSubmit={this.handleSubmit.bind(this)}>
       <input
       value={this.state.term}
       onChange={this.handleChange.bind(this)}/>
-      <button className='Button --Button-default'>Submit</button>
+      <button className='Button --Button-alert'>Submit</button>
       </form>
-
+      
+      </div>
     )
   }
 }

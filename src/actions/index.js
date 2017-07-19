@@ -7,7 +7,7 @@ export function getImages(searchterm){
 
   const url = ROOT_URL + '&tags=' + searchterm +'&safe_search=1&per_page=20&format=json&nojsoncallback=?';
   const request = axios.get(url);
-  
+
   return{
     type: FETCH_DATA,
     payload: request
