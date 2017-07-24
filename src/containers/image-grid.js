@@ -17,7 +17,7 @@ class ImageGrid extends Component{
   getImages(){
     return this.props.picsData.map((pic)=>{
       return(
-        <div className='Grid-cell u-size1of3' key={pic.id}><img
+        <div className='Grid-cell u-size1of3 u-sizeFit' key={pic.id}><img className='u-sizeFit' style={{height: '250px', width:'250px'}}
         onClick={()=>this.handleImageClick("http://farm"+ pic.farm +".static.flickr.com/"+ pic.server +"/"+ pic.id +"_"+ pic.secret +"_m.jpg")}
         src={"http://farm"+ pic.farm +".static.flickr.com/"+ pic.server +"/"+ pic.id +"_"+ pic.secret +"_m.jpg"} /></div>
       );
@@ -41,7 +41,7 @@ class ImageGrid extends Component{
 
     else{
       return(
-        <div className='Grid Grid--fit Grid--withGutter'>
+        <div className='Grid Grid--fit Grid--withGutter Grid--alignCente'>
         {this.getImages()}
         <LightBox images={this.state.images}
         isOpen = {this.state.isLightBoxOpen}
@@ -57,7 +57,5 @@ class ImageGrid extends Component{
 function mapStateToProps(state){
   return ({picsData:state.picsData});
 }
-
-
 
 export default connect(mapStateToProps)(ImageGrid);

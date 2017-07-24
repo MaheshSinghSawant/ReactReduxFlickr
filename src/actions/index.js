@@ -5,7 +5,7 @@ const ROOT_URL = `https://api.flickr.com/services/rest/?method=flickr.photos.sea
 
 export function getImages(searchterm){
 
-  const url = ROOT_URL + '&tags=' + searchterm +'&safe_search=1&per_page=20&format=json&nojsoncallback=?';
+  const url = ROOT_URL + '&tags=' + searchterm +'&safe_search=1&per_page=21&format=json&nojsoncallback=?';
   const request = axios.get(url);
 
   return{

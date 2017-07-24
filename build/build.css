@@ -872,7 +872,7 @@ fieldset {
  * Supports: 2, 4, 5, 6, 8, 10, 12 section
  */
 
-@media (min-width: 320px) and (max-width: 640px) {
+@media (min-width: 320px) and (max-width: 320px) {
 
   .u-sm-afterNone {
     margin-right: 0 !important;
@@ -1374,7 +1374,7 @@ fieldset {
  * Supports: 2, 3, 4, 5, 6, 8, 10, 12 section
  */
 
-@media (min-width: 320px) and (max-width: 640px) {
+@media (min-width: 320px) and (max-width: 320px) {
 
   .u-sm-beforeNone {
     margin-left: 0 !important;
@@ -2059,7 +2059,7 @@ fieldset {
  * Size: breakpoint 1 (small)
  */
 
-@media (min-width: 320px) and (max-width: 640px) {
+@media (min-width: 320px) and (max-width: 320px) {
 
   /* Proportional widths: breakpoint 1 (small)
      ======================================================================== */
@@ -3377,7 +3377,7 @@ fieldset {
  * Size: breakpoint 1 (small)
  */
 
-@media (min-width: 320px) and (max-width: 640px) {
+@media (min-width: 320px) and (max-width: 320px) {
 
   /* Applies to flex container
      ======================================================================== */
@@ -5222,5 +5222,20 @@ fieldset {
 
 .Grid-cell--center {
   margin: 0 auto;
+}
+
+.Grid-cell{
+  margin-bottom: 10px;
+}
+
+@media (min-width: 320px) and (max-width: 320px){
+  .Grid {
+    width: min-width;
+  }
+
+  .Grid-cell{
+    box-size : border-box;
+    margin-right: 10px;
+  }
 }
 

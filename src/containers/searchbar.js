@@ -32,7 +32,6 @@ class SearchBar extends Component{
       onChange={this.handleChange.bind(this)}/>
       <button className='Button --Button-alert'>Submit</button>
       </form>
-      
       </div>
     )
   }
